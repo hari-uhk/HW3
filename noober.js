@@ -11,7 +11,7 @@ function pageLoad() {
 
   // these variables map to the elements on the finished page;
   // assign the proper value to each variable
-let totalRidingPassengers
+
   if (ride.length == 1) {
     
     // accessing Passenger 1 details if ride array length = 1
@@ -23,20 +23,15 @@ let totalRidingPassengers
     passenger1DropoffAddressLine1 = ride[0].dropoffLocation.address
     passenger1DropoffAddressLine2 = ride[0].dropoffLocation.city + ", " + ride[0].dropoffLocation.state  + " " + ride[0].dropoffLocation.zip 
   
-    totalRidingPassengers = passenger1NumberOfPassengers
- 
     // defining type of service based on criteria
     if (ride[0].purpleRequested == true ){
       levelOfService = 'Noober Purple'
-    } else if (totalRidingPassengers > 3) {
+    } else if (passenger1NumberOfPassengers > 3) {
       levelOfService = 'Noober-XL'
     } else {
       levelOfService = "Noober X"
     }
-  
-  
-  
-  } 
+    } 
   // accessing Ride 1 and Ride 2 data when ride array length is = 2, and setting service as Pool
   else if (ride.length == 2 ){
     levelOfService = 'Noober Pool'
@@ -56,7 +51,6 @@ let totalRidingPassengers
     passenger2DropoffAddressLine1 = ride[1].dropoffLocation.address
     passenger2DropoffAddressLine2 = ride[1].dropoffLocation.city + ", " + ride[1].dropoffLocation.state  + " " + ride[1].dropoffLocation.zip 
   
-    totalRidingPassengers = passenger1NumberOfPassengers + passenger2NumberOfPassengers
 
     } 
     // accessing Ride 1, Ride 2 and Ride 3 data when ride array length is = 3, and setting service as Pool
@@ -86,7 +80,6 @@ let totalRidingPassengers
     passenger3DropoffAddressLine1 = ride[2].dropoffLocation.address
     passenger3DropoffAddressLine2 = ride[2].dropoffLocation.city + ", " + ride[2].dropoffLocation.state  + " " + ride[2].dropoffLocation.zip 
   
-    totalRidingPassengers= passenger1NumberOfPassengers + passenger2NumberOfPassengers + passenger3NumberOfPassengers
 
   } 
     
@@ -101,9 +94,6 @@ let totalRidingPassengers
   // passenger3Name, passenger3Phone, passenger3NumberOfPassengers
   // passenger3PickupAddressLine1, passenger3PickupAddressLine2
   // passenger3DropoffAddressLine1, passenger3DropoffAddressLine2
-  
-//  if ride.length = 0, then 1 customer waiting, 2 then 2 waiting etc
-//  number of passengeres = 1 then service = noober pool, else noober
 
   //  👆 YOUR CODE ENDS HERE. DON'T CHANGE ANY OTHER CODE 👆
 }
